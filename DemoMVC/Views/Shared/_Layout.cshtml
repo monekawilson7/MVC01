@@ -1,0 +1,39 @@
+﻿
+@{
+    var product = new Product();
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    @*Header*@
+    <center>
+        <div class="mt-5">
+            @*Html Helper*@
+            @*@Html.ActionLink("Home", "Index", "home", new { id = 29, name = "ahmed" }, new {@class = "btn btn-primary"} )*@
+            @*Tag Helpers*@
+            <a class="btn btn-primary" asp-action="Index" asp-controller="Home" asp-route-id="28">Home</a>
+            <a class="btn btn-warning" href="/Home/privacy">Privacy</a>
+            <a class="btn btn-success" href="/Home/ContactUs">ContactUs</a>
+            <a class="btn btn-danger" href="/Home/AboutUs">AboutUs</a>
+            <a class ="btn btn-dark" href="/Accounts/Login">Login</a>
+        </div>
+    </center>
+    @*Header*@
+    <div>
+        @RenderBody()
+    </div>
+    @*Footer*@
+    <footer>
+        <center>
+            <p>CopyRights &copy; @DateTime.Now.Year</p>
+        </center>
+    </footer>
+    @*Footer*@
+</body>
+</html>
